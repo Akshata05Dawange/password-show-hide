@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide password</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #cffcf0;
+        }
+        .img-toggle {
+            height: 40px;
+            cursor: pointer;
+        }
+        .input-password {
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .password-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            width: fit-content;
+            padding: 0 5px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="password-container">
+        <input type="password" class="input-password" id="password" placeholder="Enter your password">
+        <img src="unhide.png" class="img-toggle" id="togglePassword" alt="toggle" onclick="toggle()">
+    </div>
+    <script>
+        const passwordElement = document.getElementById('password');
+        const toggleElement = document.getElementById('togglePassword');
+
+        function toggle() {
+            if (passwordElement.type == "password") {
+                passwordElement.type = "text";
+                toggleElement.src = "hide.png";
+            }
+            else {
+                passwordElement.type = "password";
+                toggleElement.src = "unhide.png";
+            }
+        }
+    </script>
+</body>
+</html>
